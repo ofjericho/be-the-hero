@@ -5,7 +5,12 @@ module.exports = {
 
   async index(request, response){
 
-    const incidents = await connection('incidents').select('*');
+    const {page = 1 } = request.query;
+
+    const incidents = await connection('incidents')
+      .limit(5)
+      .offset((page - 1) * 5)
+      .select('*');
 
     return response.json(incidents);
 

@@ -7,10 +7,16 @@ module.exports = {
 
     const {page = 1 } = request.query;
 
+    const [count] = await connection('incidents').count();
+
+    //Paginação 
     const incidents = await connection('incidents')
       .limit(5)
       .offset((page - 1) * 5)
       .select('*');
+    
+    //Envio para o Header o total de resgistros
+    response.header('X-Total-Count', count['count(*)']);
 
     return response.json(incidents);
 

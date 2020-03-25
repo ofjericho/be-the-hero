@@ -3,11 +3,11 @@ const crypto = require('crypto');
 
 module.exports = {
 
-  async listAll(request, response) {
-    
-  const ongs = await connection('ongs').select('*');
+  async index(request, response) {
 
-  return response.json(ongs);
+    const ongs = await connection('ongs').select('*');
+
+    return response.json(ongs);
 
   },
   
@@ -29,7 +29,8 @@ module.exports = {
     });
 
     return response.json({
-      msg: 'ONG ' + name + ' criada com sucesso. ID - ' + id
+      id: id,
+      msg: 'ONG ' + name + ' criada com sucesso.'
     });
   }
 };

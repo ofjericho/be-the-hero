@@ -1,6 +1,5 @@
 const connection = require('../database/connection');
 
-
 /**
  * Retorna apenas os Casos da ONG Logada
  */

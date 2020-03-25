@@ -1,4 +1,4 @@
-** Be the HERO
+**Be the HERO
 *Objetivo
 
 *Entidades
@@ -15,8 +15,11 @@
 - Listar todos os Casos
 - Entrar em contato com a ONG (Whatsapp e Email)
 
-** Utilização do KNEX
+**Utilização do KNEX
 
 npx knex init
-
 npx knex migrate:make create_ongs
+
+
+**Leitura interessante
+http://knexjs.org/
